@@ -1,0 +1,21 @@
+/* Global SCSS variables and base styles */
+:root {
+  /* Primary theme color, can be overridden at runtime */
+  --var-root-background: #F4F4F4;
+}
+
+body {
+  margin: 0;
+  font-family:
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
