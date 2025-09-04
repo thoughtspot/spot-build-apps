@@ -1,0 +1,13 @@
+import { defineConfig } from 'vite'
+                import react from '@vitejs/plugin-react'
+
+                // https://vite.dev/config/
+                export default defineConfig({
+                base: './',
+                plugins: [react()],
+                build: {
+                    // absolute path directly as string
+                    outDir: '/home/admin/easytsey/dist/f2c49e57-2763-46be-bdbe-ef3e59dcb312',
+                    emptyOutDir: true,
+                },
+                })
