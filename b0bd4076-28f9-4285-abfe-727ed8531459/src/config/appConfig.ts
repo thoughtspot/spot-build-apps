@@ -77,7 +77,6 @@ const appConfig: any = {
   },
   "menu_items": [
     "Dashboard",
-    "Analytics",
     "Listings",
     "Reservations",
     "Admin"
