@@ -79,7 +79,8 @@ const appConfig: any = {
     "Dashboard",
     "Analytics",
     "Listings",
-    "Reservations"
+    "Reservations",
+    "Admin"
   ]
 };
             export default appConfig;
