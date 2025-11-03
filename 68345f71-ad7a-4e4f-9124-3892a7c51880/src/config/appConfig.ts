@@ -13,15 +13,15 @@ const appConfig: any = {
       "Online Store"
     ],
     "color_schema": {
-      "--ts-var-nav-color": "#e4f5ea",
+      "--ts-var-nav-color": "#f3e6fa",
       "--ts-var-root-color": "#05422a",
       "--ts-var-menu-border": "#b6e9ce",
-      "--ts-var-nav-background": "#008060",
+      "--ts-var-nav-background": "#800080",
       "--ts-var-viz-background": "#f3fbf7",
       "--ts-var-viz-box-shadow": "0 2px 12px 0 #b6e9ce",
       "--ts-var-menu-background": "#e4f5ea",
       "--ts-var-menu-item-color": "#05422a",
-      "--ts-var-nav-hover-color": "#36c986",
+      "--ts-var-nav-hover-color": "#a259d9",
       "--ts-var-root-background": "#e4f5ea",
       "--ts-var-viz-title-color": "#05422a",
       "--ts-var-viz-border-radius": "14px",
