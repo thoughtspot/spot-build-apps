@@ -7,7 +7,7 @@ import { defineConfig } from 'vite'
                 plugins: [react()],
                 build: {
                     // absolute path directly as string
-                    outDir: '/home/admin/easytsey/dist/8877d28c-4293-4820-9da3-7163eb9b6206',
+                    outDir: '/home/admin/easytsey/dist/97343374-8740-4d5b-9592-190aace2343f',
                     emptyOutDir: true,
                 },
                 })
