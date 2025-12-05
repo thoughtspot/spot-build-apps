@@ -5030,7 +5030,7 @@ const appConfig: any = {
       },
       {
         "key": "billing",
-        "label": "Billing"
+        "label": "bill"
       }
     ],
     "color_schema": {
