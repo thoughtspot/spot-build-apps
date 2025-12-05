@@ -5026,7 +5026,7 @@ const appConfig: any = {
       },
       {
         "key": "claims",
-        "label": "Claims"
+        "label": "claim"
       },
       {
         "key": "billing",
