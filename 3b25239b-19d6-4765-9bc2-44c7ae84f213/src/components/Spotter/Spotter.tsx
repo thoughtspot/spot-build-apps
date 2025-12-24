@@ -19,6 +19,13 @@ const Spotter: React.FC<SpotterProps> = ({ modelId, colorSchema }) => {
           '.authenticated-app-view-module__pageContent': {
             overflow: 'hidden !important',
           },
+          '[data-testid="conv-assist-data-source-selection-btn"]': {
+            'pointer-events': 'none !important',
+            'cursor': 'default !important',
+          },
+          'textarea[data-testid="conv-assist-chat-input"]': {
+            'background-color': 'var(--ts-var-spotter-input-background) !important',
+          },
         },
         variables: colorSchema || {},
       },
@@ -33,7 +40,6 @@ const Spotter: React.FC<SpotterProps> = ({ modelId, colorSchema }) => {
         flex: 1,
       }}
       hiddenActions={[Action.Pin, Action.Download, Action.Save, Action.Edit]}
-      hideSourceSelection
       customizations={customizations}
     />
   );

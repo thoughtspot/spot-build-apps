@@ -23,24 +23,11 @@ const Layout: React.FC<LayoutProps> = ({ config }) => {
     authType: AuthType.TrustedAuthTokenCookieless,
     getAuthToken: () => {
       return fetch(document.location.origin + '/api/apps/accessToken', {
-        // return fetch('http://172.32.88.244:3001/api/apps/accessToken', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
         },
       }).then((res) => res.json());
-      // return fetch('https://team3.thoughtspot.cloud/api/rest/2.0/auth/token/full', {
-      //   method: 'POST',
-      //   headers: {
-      //     'Content-Type': 'application/json',
-      //   },
-      //   body: JSON.stringify({
-      //     secret_key: 'd3510169-9750-4d0a-ae0e-6c40d2b43e47',
-      //     username: 'saikumar.anapuram+0202@thoughtspot.com',
-      //   }),
-      // })
-      //   .then((res) => res.json())
-      //   .then((data) => data.token);
     },
   });
 

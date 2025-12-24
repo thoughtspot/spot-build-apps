@@ -1,13 +1,16 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './App.module.scss';
 import Layout from './components/Layout/Layout';
 import TSLogo from '../assets/TSLogo.svg';
 import { track, getCommonProperties } from './utils/tracking';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const appConfig = (window as any).APP_CONFIG || {};
 
 const App: React.FC = () => {
-  let formattedDate;
+  const [viewCount, setViewCount] = useState<number | null>(null);
+
+  let formattedDate: string | undefined;
   if (appConfig?.expires_at) {
     formattedDate = new Date(appConfig.expires_at)
       .toLocaleDateString('en-US', {
@@ -22,8 +25,26 @@ const App: React.FC = () => {
     // Event 6: spotbuild-sample-app-opened
     track('spotbuild-published-app-opened', {
       ...getCommonProperties(appConfig.appId),
-      sampleAppExpiry: appConfig.expires_at,
+      sampleAppExpiry: formattedDate,
     });
+
+    const fetchViewCount = async (): Promise<void> => {
+      if (!appConfig?.appId) return;
+
+      try {
+        const response = await fetch(
+          document.location.origin + `/api/apps/${appConfig.appId}/fetch-event`
+        );
+        if (response.ok) {
+          const count = await response.json();
+          setViewCount(typeof count === 'number' ? count : 0);
+        }
+      } catch (error) {
+        console.error('Failed to fetch view count:', error);
+      }
+    };
+
+    fetchViewCount();
   }, []);
 
   return (
@@ -42,7 +63,9 @@ const App: React.FC = () => {
               THOUGHTSPOT
             </a>
           </div>
-          <div>AVAILABLE UNTIL {formattedDate ?? ''} | 72 VIEWS</div>
+          <div>
+            AVAILABLE UNTIL {formattedDate ?? ''} | {viewCount ?? '—'} VIEWS
+          </div>
         </div>
         <div className={styles.quickLinks}>
           <a href="https://www.thoughtspot.com" target="_blank">
