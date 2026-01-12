@@ -92,14 +92,11 @@ const Layout: React.FC<LayoutProps> = ({ config }) => {
   };
   const extractItems = config?.app_config?.menu_items?.map(
     (menuItem: { key: string; label: string }, index: number) => {
-      // Only liveboard and spotter tabs are functional
-      const isDisabled = menuItem.key !== 'liveboard' && menuItem.key !== 'spotter';
       return {
         href: '#' + menuItem.key,
         label: menuItem.label,
         isActive: index == 1,
         key: menuItem.key,
-        disabled: isDisabled,
       };
     }
   );

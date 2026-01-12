@@ -9,7 +9,6 @@ interface menuItem {
   href: string;
   isActive: boolean;
   key: string;
-  disabled?: boolean;
 }
 
 interface HeaderProps {
@@ -51,12 +50,10 @@ const Header: React.FC<HeaderProps> = ({ logo, menuItems, handleMenuItemClick, a
             <li key={item.label}>
               <a
                 onClick={() => {
-                  if (!item.disabled) {
-                    closeMenu();
-                    handleMenuItemClick(item.key);
-                  }
+                  closeMenu();
+                  handleMenuItemClick(item.key);
                 }}
-                className={`${item.key === activeTab ? styles.active : ''} ${item.disabled ? styles.disabled : ''}`}
+                className={item.key === activeTab ? styles.active : ''}
               >
                 {item.label}
               </a>

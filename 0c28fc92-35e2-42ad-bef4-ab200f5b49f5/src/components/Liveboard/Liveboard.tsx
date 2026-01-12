@@ -66,12 +66,6 @@ const Liveboard: React.FC<LiveboardProps> = ({ liveboardId, colorSchema }) => {
               '.highcharts-text-outline': {
                 'stroke-width': '0 !important',
               },
-              'button[data-testid="modal-confirm-button"]': {
-                'background-color': 'var(--ts-var-button--secondary-background) !important',
-              },
-              'button[data-testid="modal-confirm-button"]:hover': {
-                'background-color': 'var(--ts-var-liveboard-chip--hover-background) !important',
-              },
             },
             variables: colorSchema || {},
           },
