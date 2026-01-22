@@ -1,0 +1,113 @@
+.liveboard-filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-bottom: 1px solid #dee2e6;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  animation: slideDown 0.3s ease-out;
+  gap: 16px;
+  flex-wrap: wrap;
+
+  .filter-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+    min-width: 0;
+
+    .filter-count {
+      font-size: 14px;
+      font-weight: 600;
+      color: #495057;
+      white-space: nowrap;
+    }
+
+    .filter-list {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      flex: 1;
+      min-width: 0;
+
+      .filter-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 4px 12px;
+        background-color: #e3f2fd;
+        color: #1976d2;
+        border-radius: 16px;
+        font-size: 13px;
+        font-weight: 500;
+        border: 1px solid #bbdefb;
+        max-width: 300px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+  }
+
+  .clear-filters-btn {
+    padding: 8px 16px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.2);
+
+    &:hover {
+      background-color: #c82333;
+      box-shadow: 0 4px 8px rgba(220, 53, 69, 0.3);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 4px rgba(220, 53, 69, 0.2);
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(220, 53, 69, 0.25);
+    }
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Responsive styles
+@media (max-width: 768px) {
+  .liveboard-filter-header {
+    padding: 10px 16px;
+
+    .filter-info {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 8px;
+
+      .filter-list {
+        width: 100%;
+      }
+    }
+
+    .clear-filters-btn {
+      width: 100%;
+    }
+  }
+}
